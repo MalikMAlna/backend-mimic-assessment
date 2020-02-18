@@ -43,7 +43,7 @@ columns, so the output looks better.
 
 """
 
-import random
+# import random
 import sys
 
 __author__ = "???"
@@ -71,7 +71,8 @@ def create_mimic_dict(filename):
 
 
 def print_mimic(mimic_dict, start_word):
-    """Given a previously compiled mimic_dict and start_word, prints 200 random words:
+    """Given a previously compiled mimic_dict and start_word, prints
+        200 random words:
         - Print the start_word
         - Lookup the start_word in your mimic_dict and get it's next-list
         - Randomly select a new word from the next-list
@@ -84,7 +85,7 @@ def print_mimic(mimic_dict, start_word):
 # Provided main(), calls mimic_dict() and mimic()
 def main():
     if len(sys.argv) != 2:
-        print 'usage: python mimic.py file-to-read'
+        print('usage: python mimic.py file-to-read')
         sys.exit(1)
 
     d = create_mimic_dict(sys.argv[1])
