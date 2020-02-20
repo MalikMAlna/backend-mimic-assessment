@@ -45,12 +45,13 @@ columns, so the output looks better.
 
 # import random
 import sys
+import random
 
 __author__ = """https: // thispointer.com/
                 python-how-to-add-append-key-value-pairs-in-dictionary-using-dict-update/
                 https://stackoverflow.com/questions/27155819/delete-a-key-and-value-from-an-ordereddict
                 Asked my bro for help on adding to the value list for each key
-                """
+                Asked Jake Hershey for help on print_mimic"""
 
 
 def create_mimic_dict(filename):
@@ -74,17 +75,17 @@ def create_mimic_dict(filename):
     with open(filename, "r") as file:
         data = file.read()
         words_data = data.split()
-        words_dict = {}
+        mimic_dict = {}
         for index, word in enumerate(words_data):
             if index == 0:
-                words_dict.update({"": [word]})
-                words_dict[word] = [words_data[index+1]]
-            elif word in words_dict:
-                words_dict[word].append(words_data[index+1])
+                mimic_dict.update({"": [word]})
+                mimic_dict[word] = [words_data[index+1]]
+            elif word in mimic_dict:
+                mimic_dict[word].append(words_data[index+1])
             else:
-                words_dict.update(
-                    {words_data[index]: [words_data[index+1:index+2]]})
-    return words_dict
+                mimic_dict.update(
+                    {words_data[index]: words_data[index+1:index+2]})
+    return mimic_dict
 
 
 def print_mimic(mimic_dict, start_word):
@@ -95,8 +96,14 @@ def print_mimic(mimic_dict, start_word):
         - Randomly select a new word from the next-list
         - Repeat this process 200 times
     """
-    # +++your code here+++
-    pass
+    count = 200
+    while count:
+        print(start_word)
+        next_word = mimic_dict.get(start_word)
+        if not next_word:
+            next_word = mimic_dict[""]
+        start_word = random.choice(next_word)
+        count -= 1
 
 
 # Provided main(), calls mimic_dict() and mimic()
