@@ -53,6 +53,8 @@ __author__ = """https: // thispointer.com/
                 Asked my bro for help on adding to the value list for each key
                 Asked Jake Hershey for help on print_mimic"""
 
+time_comment = 'Assessment took around 1-3 hours to complete'
+
 
 def create_mimic_dict(filename):
     """Returns mimic dict mapping each word to list of words which follow it.
