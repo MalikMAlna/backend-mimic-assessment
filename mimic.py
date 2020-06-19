@@ -100,7 +100,7 @@ def print_mimic(mimic_dict, start_word):
     """
     count = 200
     while count:
-        print(start_word)
+        print(start_word, end=" ")
         next_word = mimic_dict.get(start_word)
         if not next_word:
             next_word = mimic_dict[""]
